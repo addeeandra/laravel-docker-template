@@ -4,14 +4,14 @@ services:
     build: php7.4-apache
     restart: unless-stopped
     ports:
-      - "80:80"
+      - "@{APP_PORT}:80"
     volumes:
       - .:/var/www/html
   adminer:
     image: adminer
     restart: unless-stopped
     ports:
-      - "81:8080"
+      - "@{ADMINER_PORT}:8080"
   db:
     image: mariadb
     volumes:
